@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/alert.ico</file>
+        <file>img/apply.ico</file>
+        <file>img/danger.ico</file>
+        <file>img/erase.ico</file>
+        <file>img/error.ico</file>
+        <file>img/no-entry.ico</file>
+        <file>img/OK.ico</file>
+        <file>img/problem.ico</file>
+        <file>img/turn off.ico</file>
+    </qresource>
+</RCC>
