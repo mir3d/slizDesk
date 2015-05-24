@@ -1,16 +1,19 @@
 #ifndef GLVIEW_H
 #define GLVIEW_H
 
-#include <QWindow>
-#include <QOpenGLFunctions>
+#include <QOpenGLWidget>
 
-class GLView : public QWindow, protected QOpenGLFunctions
+class GLView : public QOpenGLWidget
 {
     Q_OBJECT
 
 public:
-    explicit GLView(QWindow *parent = 0);
+    explicit GLView(QWidget *parent = 0);
     //~GLView();
+
+protected:
+    void initializeGL() override;
+
 };
 
 #endif // GLVIEW_H
