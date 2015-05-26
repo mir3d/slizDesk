@@ -11,7 +11,8 @@
 #include <QDebug>
 
 CGLView::CGLView(QWidget *parent) : QOpenGLWidget(parent),
-    f(nullptr)
+    f(nullptr),
+    m_context(nullptr)
 {
     //m_eventFilter = new CGLView
     //installEventFilter(m_eventFilter);
@@ -23,9 +24,20 @@ CGLView::CGLView(QWidget *parent) : QOpenGLWidget(parent),
     format.setProfile(QSurfaceFormat::CoreProfile);
     setFormat(format);
 
+    if (!m_context) {
+        m_context = new QOpenGLContext(this);
+        m_context->setFormat(requestedFormat());
+        if(!m_context->create())
+            qDebug() << "OpenGL context wasn't created";
+    }
+    //initializeOpenGLFunctions();
+    //initialize();
+
+    m_context->makeCurrent(this);
+
     f = QOpenGLContext::currentContext()->versionFunctions<QOpenGLFunctions_1_4>();
     if(f == nullptr) {
-        qDebug() << "ЖОПА!";
+        qDebug() << "error!";
         return;
     }
 
@@ -37,6 +49,8 @@ void CGLView::initializeGL()
 
 //    f->glEnable(GL_DEPTH_TEST);
 //    f->glClearColor(0.5f, 0.5f, 0.5f, 0.5f);
+
+    //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 }
 
 void CGLView::resizeGL(int w, int h)

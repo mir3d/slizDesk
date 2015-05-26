@@ -2,6 +2,8 @@
 #define GLVIEW_HPP
 
 #include <QOpenGLWidget>
+#include <QOpenGLContext>
+
 #include <QOpenGLFunctions_1_4>
 
 //class CGLViewEvenFilter;
@@ -25,6 +27,7 @@ protected:
 private:
     //CGLViewEvenFilter m_eventFilter;
     QOpenGLFunctions_1_4 *f;
+    QOpenGLContext *m_context;
 };
 
 #endif // GLVIEW_HPP
