@@ -1,4 +1,4 @@
-#include "CPlate.h"
+#include "CPlate.hpp"
 
 CPlate::CPlate(QObject *parent) : QObject(parent)
 {

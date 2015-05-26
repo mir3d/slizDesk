@@ -12,17 +12,21 @@ TARGET = sliZDesk
 TEMPLATE = app
 
 CONFIG += c++11
+DEFINES += _USE_MATH_DEFINES
 
 SOURCES += main.cpp\
         MainWindow.cpp \
     CPlate.cpp \
     CConfig.cpp \
-    GLView.cpp
+    CGLView.cpp \
+    CGLViewEvenFilter.cpp
 
-HEADERS  += MainWindow.h \
-    CPlate.h \
-    CConfig.h \
-    GLView.h
+HEADERS  += \
+    CConfig.hpp \
+    CGLView.hpp \
+    CGLViewEvenFilter.hpp \
+    CPlate.hpp \
+    MainWindow.hpp
 
 FORMS    += MainWindow.ui
 

@@ -1,5 +1,5 @@
-#ifndef CCONFIG_H
-#define CCONFIG_H
+#ifndef CCONFIG_HPP
+#define CCONFIG_HPP
 
 #include <QObject>
 
@@ -8,9 +8,9 @@ class CConfig : public QObject
     Q_OBJECT
     Q_CLASSINFO("version", "1.0.0")
 
-//    Q_PROPERTY(QString path READ path WRITE setPath NOTIFY pathChanged)
-//    Q_PROPERTY(qreal width READ width WRITE setWidth NOTIFY widthChanged)
-//    Q_PROPERTY(qreal height READ height WRITE setHeight NOTIFY heightChanged)
+    Q_PROPERTY(QString path READ path WRITE setPath NOTIFY pathChanged)
+    Q_PROPERTY(qreal width READ width WRITE setWidth NOTIFY widthChanged)
+    Q_PROPERTY(qreal height READ height WRITE setHeight NOTIFY heightChanged)
 
 public:
     explicit CConfig(QObject *parent = 0);
@@ -36,4 +36,4 @@ private:
     qreal m_height; // height of plate
 };
 
-#endif // CCONFIG_H
+#endif // CCONFIG_HPP

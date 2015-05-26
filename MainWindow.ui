@@ -61,7 +61,7 @@
      <number>0</number>
     </property>
     <item>
-     <widget class="QOpenGLWidget" name="openGLWidget"/>
+     <widget class="CGLView" name="openGLWidget"/>
     </item>
    </layout>
   </widget>
@@ -143,6 +143,13 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>CGLView</class>
+   <extends>QOpenGLWidget</extends>
+   <header location="global">CGLView.hpp</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="resurce.qrc"/>
  </resources>

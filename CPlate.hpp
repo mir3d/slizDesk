@@ -1,5 +1,5 @@
-#ifndef CPLATE_H
-#define CPLATE_H
+#ifndef CPLATE_HPP
+#define CPLATE_HPP
 
 #include <QObject>
 
@@ -8,8 +8,8 @@ class CPlate : public QObject
     Q_OBJECT
     Q_CLASSINFO("version", "1.0.0")
 
-//    Q_PROPERTY(qreal width READ width WRITE setWidth NOTIFY widthChanged)
-//    Q_PROPERTY(qreal height READ height WRITE setHeight NOTIFY heightChanged)
+    Q_PROPERTY(qreal width READ width WRITE setWidth NOTIFY widthChanged)
+    Q_PROPERTY(qreal height READ height WRITE setHeight NOTIFY heightChanged)
 
 public:
     explicit CPlate(QObject *parent = 0);
@@ -30,4 +30,4 @@ private:
     qreal m_height;
 };
 
-#endif // CPLATE_H
+#endif // CPLATE_HPP

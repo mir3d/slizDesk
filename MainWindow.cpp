@@ -1,8 +1,8 @@
-#include "MainWindow.h"
+#include "MainWindow.hpp"
 #include "ui_MainWindow.h"
 
-#include "CConfig.h"
-#include "CPlate.h"
+#include "CConfig.hpp"
+#include "CPlate.hpp"
 
 #include <QDebug>
 #include <QObject>
@@ -13,8 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    //widgetLayout->addWidget(container);
-
+    // init domain class
     m_conf = new CConfig(this); // with default properties
     m_plate = new CPlate(this); // with default properties
 

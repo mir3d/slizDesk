@@ -1,4 +1,4 @@
-#include "CConfig.h"
+#include "CConfig.hpp"
 
 CConfig::CConfig(QObject *parent) : QObject(parent),
     m_width(0),

@@ -1,5 +1,5 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef MAINWINDOW_HPP
+#define MAINWINDOW_HPP
 
 #include <QMainWindow>
 
@@ -13,6 +13,7 @@ class MainWindow;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+    Q_CLASSINFO("version", "1.0.0")
 
 public:
     explicit MainWindow(QWidget *parent = 0);
@@ -28,4 +29,4 @@ private:
     CPlate *m_plate;
 };
 
-#endif // MAINWINDOW_H
+#endif // MAINWINDOW_HPP
